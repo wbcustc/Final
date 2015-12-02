@@ -15,7 +15,7 @@ def read_train_3k(path = '../CS5785-final-data/train.txt'):
                 if labels_num.has_key(label):
                         piclabel_3k.append(labels_num[label])
                 else:
-                        labels_num[label] = len(labels)
+                        labels_num[label] = len(labels_3k)
                         piclabel_3k.append(labels_num[label])
                         labels_3k.append(label)
 	piclabel_3k = np.array(piclabel_3k)
@@ -36,3 +36,4 @@ def read_attributes_train(path):
 
 def read_attributes_test(path):
 	return
+
