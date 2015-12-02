@@ -1,14 +1,14 @@
 import numpy as np
 
-train_3k = './CS5785-final-data/train.txt'
-test_3k = './CS5785-final-data/test.txt'
-attr_list = './CS5785-final-data/attributes_list.txt'
-attr_train = './CS5785-final-data/attributes_train.txt'
-attr_test = './CS5785-final-data/attributes_train.txt'
-alexnet_train = './CS5785-final-data/alexnet_feat_train.npy'
-alexnet_test = './CS5785-final-data/alexnet_feat_test.npy'
-siftbow_train = './CS5785-final-data/SIFTBoW_train.npy'
-siftbow_test = './CS5785-final-data/SIFTBoW_test.npy'
+train_3k = '../CS5785-final-data/train.txt'
+test_3k = '../CS5785-final-data/test.txt'
+attr_list = '../CS5785-final-data/attributes_list.txt'
+attr_train = '../CS5785-final-data/attributes_train.txt'
+attr_test = '../CS5785-final-data/attributes_train.txt'
+alexnet_train = '../CS5785-final-data/alexnet_feat_train.npy'
+alexnet_test = '../CS5785-final-data/alexnet_feat_test.npy'
+siftbow_train = '../CS5785-final-data/SIFTBoW_train.npy'
+siftbow_test = '../CS5785-final-data/SIFTBoW_test.npy'
 
 def read_train_3k(path):
     reader = open(path)
