@@ -22,11 +22,17 @@ def read_train_3k(path = '../CS5785-final-data/train.txt'):
         return piclabel, picname, labels
 
 def read_test_3k(path):
-	return
+    reader=open('/Users/jingjingzhang/Desktop/Data_Minning_Final/CS5785-final-data/test.txt','rb')
+    jpg_file=[]
+
+    for line in reader:
+        line=line.strip()
+        jpg_file.append(line)
+
+    return jpg_file
 
 def read_attributes_train(path):
 	return
 
 def read_attributes_test(path):
 	return
-
