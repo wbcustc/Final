@@ -60,10 +60,6 @@ def read_npy(path):
 	ret = np.load(path)
 	return ret
 
-<<<<<<< Updated upstream
-
-=======
 if __name__ == '__main__':
 	ret = read_attributes_train('./CS5785-final-data/attributes_train.txt')
 	print type(ret)
->>>>>>> Stashed changes
