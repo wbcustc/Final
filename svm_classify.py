@@ -37,20 +37,20 @@ def svm_predict(X,y,test):
 	test_label = clf.fit(X,y).predict(test)
 	return test_label
 
+def generate_csv(filename,test_label):
+	with open(filename, 'w') as f:
+		temp = 'ID,Category'
+		f.writelines(temp+'\n')
+		for i in xrange(len(test_label)):
+			temp = test_name[i]+','+labelname_3k[test_label[i]] + '\n'
+			f.writelines(temp)
 
 def main():
 	# print cross_validate(train_data)
 	# print cross_validate(train_data_alex)
 	# print cross_validate(train_data_siftbow)
 	test_label = svm_predict(train_data_alex, train_label, test_data_alex)
-	with open('svm_result.csv', 'w') as f:
-		temp = 'ID,Category'
-		f.writelines(temp+'\n')
-		for i in xrange(len(test_label)):
-			temp = test_name[i]+','+labelname_3k[test_label[i]] + '\n'
-			print temp
-			f.writelines(temp)
-
+	generate_csv('svm_result.csv',test_label)
 
 
 if __name__ == '__main__':
