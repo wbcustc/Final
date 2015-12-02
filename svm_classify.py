@@ -15,13 +15,12 @@ def cross_validate():
 		# print("TRAIN:", train_index, "TEST:", test_index)
 		X_train, X_test = train_data[train_index], train_data[test_index]
 	   	y_train, y_test = train_label[train_index], train_label[test_index]
-	   	svm(X_train,y_train,X_test,y_test)
+	   	print svm(X_train,y_train,X_test,y_test)
 
 def svm(X_train,y_train,X_test,y_test):
 	clf = SVC(C=1.0,kernel = 'rbf',decision_function_shape = 'ovr')
-	clf.fit(X_train,y_train)
-
-	return
+	score = clf.fit(X_train,y_train).score(X_test,y_test)
+	return score
 
 
 def main():
