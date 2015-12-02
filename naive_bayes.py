@@ -1,6 +1,7 @@
 from sklearn import naive_bayes
 from sklearn import cross_validation
 import read_data
+import numpy as np
 
 def gaussianNB(train_data, train_label, test_data):
         gnb = naive_bayes.GaussianNB()
@@ -39,6 +40,8 @@ if __name__ == "__main__":
 	piclabel_3k, picname_3k, labels_3k = read_data.read_train_3k(read_data.train_3k)
 	attributes_train = read_data.read_attributes(read_data.attr_train)
 	alexnet_train = read_data.read_npy(read_data.alexnet_train)
+	alexmin = np.amin(alexnet_train)
+	alexnet_train_ = alexnet_train - alexmin;
 	siftbow_train = read_data.read_npy(read_data.siftbow_train)
 	acc_attri_gNB = crossvalid_gaussianNB(attributes_train, piclabel_3k)
 	print acc_attri_gNB
@@ -48,8 +51,8 @@ if __name__ == "__main__":
         print acc_attri_bNB
 	acc_alexnet_gNB = crossvalid_gaussianNB(alexnet_train, piclabel_3k)
         print acc_alexnet_gNB
-        #acc_alexnet_mNB = crossvalid_multinomialNB(alexnet_train, piclabel_3k)
-        #print acc_alexnet_mNB
+        acc_alexnet_mNB = crossvalid_multinomialNB(alexnet_train_, piclabel_3k)
+        print acc_alexnet_mNB
         acc_alexnet_bNB = crossvalid_bernoulliNB(alexnet_train, piclabel_3k)
         print acc_alexnet_bNB
 	acc_siftbow_gNB = crossvalid_gaussianNB(siftbow_train, piclabel_3k)
