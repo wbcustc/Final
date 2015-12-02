@@ -28,12 +28,12 @@ def read_train_3k(path):
             labels_num[label] = len(labels_3k)
             piclabel_3k.append(labels_num[label])
             labels_3k.append(label)
-	piclabel_3k = np.array(piclabel_3k)
+    piclabel_3k = np.array(piclabel_3k)
     return piclabel_3k, picname_3k, labels_3k
 
 def read_test_3k(path):
-    reader=open(path)
-    jpg_file=[]
+    reader = open(path)
+    jpg_file = []
     for line in reader:
         line=line.strip()
         jpg_file.append(line)
