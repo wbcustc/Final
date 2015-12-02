@@ -6,13 +6,12 @@ path_attr_list = './CS5785-final-data/attributes_list.txt'
 path_attr_train = './CS5785-final-data/attributes_train.txt'
 path_attr_test = './CS5785-final-data/attributes_train.txt'
 
-
 def read_train_3k(path = '../CS5785-final-data/train.txt'):
         reader = open(path)
-        piclabel_3k = list()
-        picname_3k = list()
-        labels_3k = list()
-        labels_num = dict()
+        piclabel_3k = []
+        picname_3k = []
+        labels_3k = []
+        labels_num = {}
         for line in reader:
                 line = line.strip()
                 line = line.split(' ')
@@ -22,7 +21,7 @@ def read_train_3k(path = '../CS5785-final-data/train.txt'):
                 if labels_num.has_key(label):
                         piclabel_3k.append(labels_num[label])
                 else:
-                        labels_num[label] = len(labels)
+                        labels_num[label] = len(labels_3k)
                         piclabel_3k.append(labels_num[label])
                         labels_3k.append(label)
 	piclabel_3k = np.array(piclabel_3k)
@@ -55,6 +54,7 @@ def read_attributes(path):
 
 def read_data():
 	return
+
 
 if __name__ == '__main__':
 	ret = read_attributes_train('./CS5785-final-data/attributes_train.txt')
