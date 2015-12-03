@@ -4,7 +4,7 @@ train_3k = '../CS5785-final-data/train.txt'
 test_3k = '../CS5785-final-data/test.txt'
 attr_list = '../CS5785-final-data/attributes_list.txt'
 attr_train = '../CS5785-final-data/attributes_train.txt'
-attr_test = '../CS5785-final-data/attributes_train.txt'
+attr_test = '../CS5785-final-data/attributes_test.txt'
 alexnet_train = '../CS5785-final-data/alexnet_feat_train.npy'
 alexnet_test = '../CS5785-final-data/alexnet_feat_test.npy'
 siftbow_train = '../CS5785-final-data/SIFTBoW_train.npy'
@@ -60,9 +60,6 @@ def read_npy(path):
 	ret = np.load(path)
 	return ret
 
-<<<<<<< HEAD
 if __name__ == '__main__':
 	ret = read_attributes_train('./CS5785-final-data/attributes_train.txt')
 	print type(ret)
-=======
->>>>>>> origin/master

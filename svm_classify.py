@@ -1,8 +1,7 @@
 import numpy as np
 import read_data as rd
 from sklearn.cross_validation import KFold
-from sklearn.svm import SVC
-from sklearn.svm import LinearSVC
+
 
 train_label,picname_3k,labelname_3k = rd.read_train_3k(rd.train_3k)
 test_name = rd.read_test_3k(rd.test_3k)
