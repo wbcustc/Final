@@ -9,7 +9,7 @@ import numpy as np
 
 def random_forest(depth,num_trees,train_data,train_label,test_data):
     rf=RandomForestClassifier(n_estimators=50)
-    prediction=rf.fit(train_data, train_label).predict(test_data)
+    prediction=rf.fit(train_data, train_label).predict_proba(test_data)
 
     return prediction
 
